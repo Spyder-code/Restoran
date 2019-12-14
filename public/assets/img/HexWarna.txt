@@ -1,0 +1,4 @@
+Kuning Background : #FFF895
+Merah Judul       : #FE8787
+Merah Button      : #FFB2B2
+Merah FontAntrian : #FF0000
