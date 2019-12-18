@@ -45,7 +45,7 @@
     </div>
     <script>
     var delay = 15000;
-    setTimeout(function(){ window.location='http://localhost/coba/public/';},delay);
+    setTimeout(function(){ window.location='http://localhost/restaurant/public/';},delay);
     </script>
 
     @endsection

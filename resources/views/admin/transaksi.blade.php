@@ -31,7 +31,12 @@
                 @endif
             </td>
             <td>
-            <a href="{{ $tran->id }}/confirm" class="btn btn-primary">Confirm</a>
+                @if($tran->status==0)
+                <a href="{{ $tran->id }}/confirm" class="btn btn-primary">Confirm</a>
+            @else
+            <a href="{{ $tran->id }}/detail" class="btn btn-secondary">Detail</a>
+
+            @endif
             </td>
             </tr>
             @endforeach

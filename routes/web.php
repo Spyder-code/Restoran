@@ -19,6 +19,7 @@
     Route::get('/dapur', 'HomeController@dapur')->name('kasir');
     Route::get('/kasir', 'HomeController@index')->name('dapur')->middleware('auth.admin', 'auth');
     Route::get('/{customer}/confirm', 'HomeController@confirm')->name('Pembayaran');
+    Route::get('/{customer}/detail', 'HomeController@detail')->name('Pembayaran');
     Route::get('/{tran}/edit', 'HomeController@update');
     Route::get('/home/customer', 'HomeController@customer')->name('Kritik|Saran');
     Route::get('/print/{customer}/', 'HomeController@print');

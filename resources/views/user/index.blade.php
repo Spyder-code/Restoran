@@ -19,11 +19,28 @@
                             <div class="card-body">
                                 <h5 class="card-title" id="nama">{{$food->nama}}</h5>
 
+                                @if ($food->rating>=50&&$food->rating<60)
                                 <div class="rating">
+                                        <i class="fas fa-star" style="color:yellow"></i>
+                                        <i class="fas fa-star" style="color:yellow"></i>
+                                        <i class="fas fa-star" style="color:yellow"></i>
+                                        <i class="fas fa-star" style="color:yellow"></i>
+                                </div>
+                            @elseif($food->rating>=60)
+                            <div class="rating">
+                                    <i class="fas fa-star" style="color:yellow"></i>
+                                    <i class="fas fa-star" style="color:yellow"></i>
+                                    <i class="fas fa-star" style="color:yellow"></i>
+                                    <i class="fas fa-star" style="color:yellow"></i>
+                                    <i class="fas fa-star" style="color:yellow"></i>
+                            </div>
+                            @else
+                            <div class="rating">
                                     <i class="fas fa-star" style="color:yellow"></i>
                                     <i class="fas fa-star" style="color:yellow"></i>
                                     <i class="fas fa-star" style="color:yellow"></i>
                                 </div>
+                            @endif
 
 
                                 <p class="card-text" id="harga">Rp.{{$food->harga}}</p>
@@ -37,7 +54,11 @@
                                             <input type="hidden" name="harga" value="{{$food->harga}}">
                                             <input type="hidden" name="rating" value="{{$food->rating}}">
                                         </div>
-                                    <button type="submit" class="btn btn-primary">Tambahkan</button>
+                                        @if ($food->rating>=100)
+                                        <button type="submit" class="btn btn-secondary disabled ">Habis</button>
+                                        @else
+                                        <button type="submit" class="btn btn-primary">Tambahkan</button>
+                                        @endif
                                 </form>
                             </div>
                         </div>
@@ -93,7 +114,11 @@
                                             <input type="hidden" name="user" value="{{ $user->id }}">
                                             <input type="hidden" name="rating" value="{{$food->rating}}">
                                         </div>
-                                    <button type="submit" class="btn btn-primary">Tambahkan</button>
+                                        @if ($drink->rating>=100)
+                                        <button type="submit" class="btn btn-secondary disabled ">Habis</button>
+                                        @else
+                                        <button type="submit" class="btn btn-primary">Tambahkan</button>
+                                        @endif
                                 </form>
                             </div>
                         </div>

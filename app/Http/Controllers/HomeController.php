@@ -85,6 +85,14 @@ class HomeController extends Controller
         return view('admin.tambah', compact('trans', 'total', 'user'));
         return redirect($customer->id . '/confirm');
     }
+    public function detail(Customer $customer)
+    {
+
+        $trans =  Tran::all()->where('id_customers', '=', $customer->id);
+        $total = DB::table('trans')->where('id_customers', '=', $customer->id)->sum('total');
+        $user = $customer;
+        return view('admin.detail', compact('trans', 'total', 'user'));
+    }
     public function antrian(Request $request)
     {
 

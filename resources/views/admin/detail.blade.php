@@ -46,9 +46,5 @@
             </div>
         </div>
     </div>
-    <script>
-    window.print();
-    var delay = 1500;
-    setTimeout(function(){ window.location='http://localhost/restaurant/public/kasir';},delay);
-    </script>
+    <a href="{{ url('kasir') }}" class="btn btn-primary text-center d-block">Kembali</a>
 @endsection
